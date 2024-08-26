@@ -1,86 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" /> <!-- Establece la codificación de caracteres a UTF-8 -->
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" /> <!-- Preconexión para mejorar el rendimiento de carga de fuentes -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
-    /> <!-- Importación de las fuentes Noto Sans y Plus Jakarta Sans -->
-    <title>Bienvenido a Alas de Ayuda</title> <!-- Título de la página -->
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," /> <!-- Icono de la pestaña (favicon) -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script> <!-- Importación de Tailwind CSS -->
+    <meta charset="UTF-8">
+    <title>Interfaz Similar a Instagram</title>
+    <!-- Importando Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Importando Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Importando fuente Lobster -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <style>
-      body {
-        font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif; /* Establece la fuente del cuerpo de la página */
-      }
-      .bg-custom {
-        background-color: #00401a; /* Fondo personalizado */
-      }
-      .header-bg {
-        background-color: #003016; /* Fondo de la barra de navegación */
-      }
-      .text-gold {
-        color: #d6c65d; /* Color dorado para textos */
-      }
-      .text-light {
-        color: #e0e0e0; /* Color claro para textos secundarios */
-      }
-      .btn-gold {
-        background-color: #d6c65d; /* Color dorado del botón */
-        color: white; /* Color del texto del botón */
-        padding: 0.5rem 1rem; /* Espaciado vertical y horizontal */
-        border-radius: 0.375rem; /* Bordes redondeados para el botón */
-        box-shadow: 0 4px 15px rgba(214, 198, 93, 0); /* Efecto de sombra alrededor del botón */
-        transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves para cambios de fondo y transformaciones */
-      }
-      .btn-gold:hover {
-        background-color: #b8a14a; /* Color más oscuro al pasar el ratón sobre el botón */
-        transform: translateY(-2px); /* Eleva el botón al pasar el ratón */
-      }
-      /* Estilo para los enlaces del menú de navegación */
-      nav a {
-        transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves para el hover */
-      }
-      nav a:hover {
-        background-color: rgba(211, 198, 93, 0.2); /* Fondo gris brillante al pasar el mouse sobre el enlace */
-        border-radius: 0.375rem; /* Bordes redondeados para el botón */
-      }
+        body {
+            background-color: #000; /* Color de fondo negro */
+            color: #fff; /* Color del texto blanco */
+            display: flex; /* Usar flexbox para diseño */
+        }
+        .sidebar {
+            background-color: #000; /* Color de fondo de la barra lateral */
+            width: 250px; /* Ancho de la barra lateral */
+            height: 100vh; /* Altura completa de la vista */
+            padding-top: 20px; /* Espacio en la parte superior */
+            border-right: 1px solid #1c1c1c; /* Línea gris a la derecha */
+            display: flex;
+            flex-direction: column; /* Disposición vertical de elementos */
+            align-items: flex-start; /* Alinear contenido a la izquierda */
+            padding-left: 20px; /* Espacio a la izquierda */
+        }
+        .sidebar h1 {
+            font-family: 'Lobster', cursive; /* Cambiar la fuente a Lobster */
+            color: #ffffff; /* Color del texto */
+            font-size: 26px; /* Tamaño de la fuente */
+            margin-bottom: 20px; /* Espacio debajo del título */
+            text-shadow: none; /* Sin brillo o sombra */
+        }
+        .sidebar a {
+            color: #ffffff; /* Color del texto de los enlaces */
+            display: flex; /* Usar flexbox para disposición de iconos y texto */
+            align-items: center; /* Alinear icono y texto verticalmente */
+            margin-bottom: 10px; /* Reducir el espacio entre los iconos */
+            font-size: 16px; /* Tamaño de los iconos reducido */
+            transition: background-color 0.3s ease; /* Efecto de transición suave para el fondo */
+            padding: 10px; /* Añadir espacio interno */
+        }
+        .sidebar a i {
+            margin-right: 10px; /* Espacio entre el icono y el texto */
+            font-size: 29px; /* Tamaño de los iconos */
+        }
+        .sidebar a:hover {
+            background-color: rgba(105, 105, 105, 0.3); /* Color gris oscuro al pasar el mouse */
+            color: #ffffff; /* Asegurar que el texto se mantenga blanco */
+            border-radius: 10px; /* Añadir bordes curveados al pasar el mouse */
+        }
+        .content {
+            flex: 1; /* Ocupa el espacio restante disponible */
+            display: flex; /* Usar flexbox para disposición */
+            justify-content: center; /* Centrar horizontalmente el contenido */
+            align-items: center; /* Centrar verticalmente el contenido */
+            padding: 20px; /* Espacio alrededor del contenido */
+            flex-direction: column; /* Disposición vertical de elementos */
+            position: relative; /* Para posicionamiento relativo de elementos secundarios */
+        }
+        .reels-container {
+            display: flex; /* Usar flexbox para disposición de la imagen y los iconos */
+            align-items: center; /* Alinear verticalmente la imagen y los iconos */
+            justify-content: center; /* Centrar horizontalmente el contenedor */
+        }
+        .content img {
+            max-width: 35%; /* Ancho máximo de la imagen */
+            border-radius: 15px; /* Bordes redondeados de la imagen */
+            margin-right: 20px; /* Espacio a la derecha de la imagen */
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.4); /* Sombra difusa alrededor de la imagen */
+        }
+        .btn {
+            background-color: #424242; /* Color de fondo del botón */
+            color: #fff; /* Color del texto del botón */
+            display: flex; /* Usar flexbox para centrar contenido del botón */
+            justify-content: center; /* Centrar contenido horizontalmente */
+            align-items: center; /* Centrar contenido verticalmente */
+            text-align: center; /* Alinear el texto al centro */
+            padding: 10px; /* Espacio interno del botón */
+            margin-top: 20px; /* Espacio superior del botón */
+            text-decoration: none; /* Sin subrayado en el texto del botón */
+            width: 150px; /* Ancho del botón */
+            height: 40px; /* Altura del botón */
+        }
+        .btn:hover {
+            background-color: #616161; /* Color del botón al pasar el mouse */
+        }
+        .reels-icons {
+            display: flex; /* Usar flexbox para disposición vertical de iconos */
+            flex-direction: column; /* Disposición vertical de los iconos */
+            align-items: center; /* Centrar iconos horizontalmente */
+            margin-left: 10px; /* Espacio a la izquierda de los iconos */
+            margin-top: 250px; /* Ajuste el margen superior */
+        }
+        .reels-icons a {
+            color: #ffffff; /* Color de los iconos */
+            margin-bottom: 15px; /* Espacio entre iconos */
+            font-size: 24px; /* Tamaño de los iconos */
+        }
+        .spacer {
+            flex-grow: 1; /* Permite que este elemento crezca para ocupar espacio */
+        }
     </style>
 </head>
 <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-custom dark group/design-root overflow-x-hidden">
-      <header class="header-bg p-4"> <!-- Barra de navegación con fondo -->
-        <nav class="container mx-auto flex justify-between items-center"> <!-- Contenedor de navegación -->
-          <h1 class="text-gold text-2xl font-bold"> <!-- Título de la página -->
-            <a href="index.php" class="hover:text-gold">Alas de Ayuda</a> <!-- Enlace al inicio -->
-          </h1>
-          <ul class="flex space-x-6 text-light"> <!-- Lista de enlaces de navegación -->
-            <li><a href="https://docs.google.com/document/d/1t2JT2TTdc9H8ryFlHHTKtpJ0FUoo0lp57Hy3LIpw-Os/edit" class="hover:text-gold">Más sobre nosotros</a></li>
-            <li><a href="#" class="hover:text-gold">Servicios</a></li>
-            <li><a href="#" class="hover:text-gold">Contactar</a></li>
-            <li><a href="#" class="hover:text-gold">Únete</a></li>
-          </ul>
-        </nav>
-      </header>
-      <div class="flex flex-1 justify-center items-center px-10"> <!-- Contenedor principal -->
-        <div class="max-w-[960px] text-center"> <!-- Contenedor de texto centrado -->
-        <img src="miimagen.png" alt="Descripción de la imagen" class="mx-auto my-4" style="width: 200px; height: auto;" />
-          <h2 class="text-gold text-3xl font-bold mb-4">Bienvenido a Alas de Ayuda</h2> <!-- Título de bienvenida -->
-          <p class="text-light text-lg mb-6"> <!-- Descripción -->
-            En Alas de Ayuda, nos dedicamos a brindar apoyo y recursos a las comunidades más vulnerables. 
-            Nuestro objetivo es hacer una diferencia real en la vida de las personas.
-          </p>
-          <a href="2.html" class="btn-gold"> <!-- Botón de enlace -->
-            Ver oportunidades laborales
-          </a>
+
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <h1>Instagram</h1> <!-- Título de la barra lateral -->
+        <div>
+            <a href="#"><i class="material-icons">home</i>Inicio</a> <!-- Enlace a la sección Inicio -->
+            <a href="#"><i class="material-icons">search</i>Buscar</a> <!-- Enlace a la sección Buscar -->
+            <a href="#"><i class="material-icons">explore</i>Explorar</a> <!-- Enlace a la sección Explorar -->
+            <a href="#"><i class="material-icons">movie</i>Reels</a> <!-- Enlace a la sección Reels -->
+            <a href="#"><i class="material-icons">message</i>Mensajes</a> <!-- Enlace a la sección Mensajes -->
+            <a href="#"><i class="material-icons">notifications</i>Notificaciones</a> <!-- Enlace a la sección Notificaciones -->
+            <a href="#"><i class="material-icons">add_box</i>Crear</a> <!-- Enlace a la sección Crear -->
+            <a href="#"><i class="material-icons">account_circle</i>Perfil</a> <!-- Enlace a la sección Perfil -->
         </div>
-      </div>
-      <footer class="flex justify-center"> <!-- Pie de página -->
-        <div class="flex max-w-[960px] flex-1 flex-col">
-          <p class="text-[#999999] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center">Alas de Ayuda</p> <!-- Texto de copyright -->
-        </div>
-      </footer>
+        <div class="spacer"></div> <!-- Espacio flexible para empujar el siguiente enlace hacia abajo -->
+        <a href="#"><i class="material-icons">menu</i>Más</a> <!-- Ícono "Más" separado -->
     </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <div class="reels-container">
+            <img src="imagen1.png" alt="Imagen Principal"> <!-- Imagen principal -->
+            <!-- Iconos Reels justo al lado de la imagen -->
+            <div class="reels-icons">
+                <a href="#"><i class="material-icons">thumb_up</i></a> <!-- Icono de Me Gusta -->
+                <a href="#"><i class="material-icons">comment</i></a> <!-- Icono de Comentarios -->
+                <a href="#"><i class="material-icons">share</i></a> <!-- Icono de Compartir -->
+                <a href="#"><i class="material-icons">save</i></a> <!-- Icono de Guardar -->
+                <a href="#"><i class="material-icons">more_horiz</i></a> <!-- Icono de Tres Puntos -->
+            </div>
+        </div>
+        <!-- Botón "Saber más" debajo de la imagen -->
+        <a class="btn" href="1.html">Saber más</a> <!-- Enlace al que se redirige el botón -->
+    </div>
+
+    <!-- Importando Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
