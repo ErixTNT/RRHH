@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <!-- Conexión con Google Fonts para utilizar tipografías -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+    />
+    <title>Alas de Ayuda</title> <!-- Título de la página -->
+    <!-- Icono de la página -->
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <!-- Importando Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif; /* Establece la fuente del cuerpo de la página */
+      }
+      .bg-custom {
+        background-color: #00401a; /* Fondo personalizado */
+      }
+      .header-bg {
+        background-color: #003016; /* Fondo de la barra de navegación */
+      }
+      .text-gold {
+        color: #d6c65d; /* Color dorado para textos */
+      }
+      .text-light {
+        color: #e0e0e0; /* Color claro para textos secundarios */
+      }
+      .btn-gold {
+        background-color: #d6c65d; /* Color dorado del botón */
+        color: white; /* Color del texto del botón */
+        padding: 0.5rem 1rem; /* Espaciado vertical y horizontal */
+        border-radius: 0.375rem; /* Bordes redondeados para el botón */
+        box-shadow: 0 4px 15px rgba(214, 198, 93, 0); /* Efecto de sombra alrededor del botón */
+        transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves para cambios de fondo y transformaciones */
+      }
+      .btn-gold:hover {
+        background-color: #b8a14a; /* Color más oscuro al pasar el ratón sobre el botón */
+        transform: translateY(-2px); /* Eleva el botón al pasar el ratón */
+      }
+      /* Estilo para los enlaces del menú de navegación */
+      nav a {
+        transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves para el hover */
+      }
+      nav a:hover {
+        background-color: rgba(211, 198, 93, 0.2); /* Fondo gris brillante al pasar el mouse sobre el enlace */
+        border-radius: 0.375rem; /* Bordes redondeados para el botón */
+      }
+    </style>
+</head>
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-custom dark group/design-root overflow-x-hidden">
+      <header class="header-bg p-4"> <!-- Barra de navegación con fondo -->
+        <nav class="container mx-auto flex justify-between items-center"> <!-- Contenedor de navegación -->
+          <h1 class="text-gold text-2xl font-bold"> <!-- Título de la página -->
+            <a href="index.php" class="hover:text-gold">Alas de Ayuda</a> <!-- Enlace al inicio -->
+          </h1>
+          <ul class="flex space-x-6 text-light"> <!-- Lista de enlaces de navegación -->
+            <li><a href="https://docs.google.com/document/d/1t2JT2TTdc9H8ryFlHHTKtpJ0FUoo0lp57Hy3LIpw-Os/edit" class="hover:text-gold">Más sobre nosotros</a></li>
+            <li><a href="#" class="hover:text-gold">Servicios</a></li>
+            <li><a href="#" class="hover:text-gold">Contactar</a></li>
+            <li><a href="index.php" class="hover:text-gold">Únete</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- Contenedor principal de la página -->
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <!-- Título principal -->
+            <h2 class="text-[#D6C65D] tracking-light text-[40px] font-bold leading-tight px-4 text-center pb-3 pt-5">¡Únete a Alas de Ayuda!</h2>
+            <!-- Imagen relevante -->
+            <img src="miimagen.png" alt="Descripción de la imagen" class="mx-auto my-4" style="width: 200px; height: auto;" />
+            <!-- Sección de requisitos -->
+            <h1 class="text-[#D6C65D] text-[24px] font-bold leading-tight tracking-[-0.015em] px-4 text-left pb-3 pt-5">Tiempo completo</h1>
+            <h2 class="text-[#D6C65D] text-lg font-bold leading-tight tracking-[-0.015em] px-4 text-left pb-2 pt-4">Requisitos:</h2>
+            <ul class="text-[#E0E0E0] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              <li>• Maestría en Marketing Digital</li>
+              <li>• Experiencia mínima de 6 años en gestión de programas comunitarios o roles similares.</li>
+              <li>• Habilidades de liderazgo y capacidad para trabajar en equipo.</li>
+              <li>• Compromiso con la misión y visión de 'Alas de Ayuda'.</li>
+              <li>• Disposición para viajar a zonas rurales.</li>
+            </ul>
+            <!-- Sección de ofertas -->
+            <h2 class="text-[#D6C65D] text-lg font-bold leading-tight tracking-[-0.015em] px-4 text-left pb-2 pt-4">Ofrecemos:</h2>
+            <ul class="text-[#E0E0E0] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              <li>• Sueldo base más prestaciones de ley.</li>
+              <li>• Seguro de gastos médicos.</li>
+              <li>• Comedor y transporte.</li>
+              <li>• Posibilidad de hacer una diferencia real en comunidades vulnerables.</li>
+            </ul>
+            <!-- Información de contacto -->
+            <h2 class="text-[#D6C65D] tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">Envía tu currículum y carta de motivación a:</h2>
+            <p class="text-[#E0E0E0] text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">empleos@alasdeayuda.org</p>
+          </div>
+        </div>
+        <!-- Pie de página -->
+        <footer class="flex justify-center">
+          <div class="flex max-w-[960px] flex-1 flex-col">
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3">
+                <!-- Imagen de fondo para la sección del pie de página -->
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/stability/fbfa5efa-fc18-40fb-b28f-69fb26b4ff74.png");'
+                ></div>
+              </div>
+            </div>
+            <!-- Créditos en el pie de página -->
+            <p class="text-[#999999] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center">Alas de Ayuda</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+</body>
+</html>

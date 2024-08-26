@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Interfaz Similar a Instagram</title>
+    <!-- Importando Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Importando Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Importando fuente Lobster -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000; /* Color de fondo negro */
+            color: #fff; /* Color del texto blanco */
+            display: flex; /* Usar flexbox para diseño */
+        }
+        .sidebar {
+            background-color: #000; /* Color de fondo de la barra lateral */
+            width: 250px; /* Ancho de la barra lateral */
+            height: 100vh; /* Altura completa de la vista */
+            padding-top: 20px; /* Espacio en la parte superior */
+            border-right: 1px solid #1c1c1c; /* Línea gris a la derecha */
+            display: flex;
+            flex-direction: column; /* Disposición vertical de elementos */
+            align-items: flex-start; /* Alinear contenido a la izquierda */
+            padding-left: 20px; /* Espacio a la izquierda */
+        }
+        .sidebar h1 {
+            font-family: 'Lobster', cursive; /* Cambiar la fuente a Lobster */
+            color: #ffffff; /* Color del texto */
+            font-size: 26px; /* Tamaño de la fuente */
+            margin-bottom: 20px; /* Espacio debajo del título */
+            text-shadow: none; /* Sin brillo o sombra */
+        }
+        .sidebar a {
+            color: #ffffff; /* Color del texto de los enlaces */
+            display: flex; /* Usar flexbox para disposición de iconos y texto */
+            align-items: center; /* Alinear icono y texto verticalmente */
+            margin-bottom: 10px; /* Reducir el espacio entre los iconos */
+            font-size: 16px; /* Tamaño de los iconos reducido */
+            transition: background-color 0.3s ease; /* Efecto de transición suave para el fondo */
+            padding: 10px; /* Añadir espacio interno */
+        }
+        .sidebar a i {
+            margin-right: 10px; /* Espacio entre el icono y el texto */
+            font-size: 29px; /* Tamaño de los iconos */
+        }
+        .sidebar a:hover {
+            background-color: rgba(105, 105, 105, 0.3); /* Color gris oscuro al pasar el mouse */
+            color: #ffffff; /* Asegurar que el texto se mantenga blanco */
+            border-radius: 10px; /* Añadir bordes curveados al pasar el mouse */
+        }
+        .content {
+            flex: 1; /* Ocupa el espacio restante disponible */
+            display: flex; /* Usar flexbox para disposición */
+            justify-content: center; /* Centrar horizontalmente el contenido */
+            align-items: center; /* Centrar verticalmente el contenido */
+            padding: 20px; /* Espacio alrededor del contenido */
+            flex-direction: column; /* Disposición vertical de elementos */
+            position: relative; /* Para posicionamiento relativo de elementos secundarios */
+        }
+        .reels-container {
+            display: flex; /* Usar flexbox para disposición de la imagen y los iconos */
+            align-items: center; /* Alinear verticalmente la imagen y los iconos */
+            justify-content: center; /* Centrar horizontalmente el contenedor */
+        }
+        .content img {
+            max-width: 35%; /* Ancho máximo de la imagen */
+            border-radius: 15px; /* Bordes redondeados de la imagen */
+            margin-right: 20px; /* Espacio a la derecha de la imagen */
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.4); /* Sombra difusa alrededor de la imagen */
+        }
+        .btn {
+            background-color: #424242; /* Color de fondo del botón */
+            color: #fff; /* Color del texto del botón */
+            display: flex; /* Usar flexbox para centrar contenido del botón */
+            justify-content: center; /* Centrar contenido horizontalmente */
+            align-items: center; /* Centrar contenido verticalmente */
+            text-align: center; /* Alinear el texto al centro */
+            padding: 10px; /* Espacio interno del botón */
+            margin-top: 20px; /* Espacio superior del botón */
+            text-decoration: none; /* Sin subrayado en el texto del botón */
+            width: 150px; /* Ancho del botón */
+            height: 40px; /* Altura del botón */
+        }
+        .btn:hover {
+            background-color: #616161; /* Color del botón al pasar el mouse */
+        }
+        .reels-icons {
+            display: flex; /* Usar flexbox para disposición vertical de iconos */
+            flex-direction: column; /* Disposición vertical de los iconos */
+            align-items: center; /* Centrar iconos horizontalmente */
+            margin-left: 10px; /* Espacio a la izquierda de los iconos */
+            margin-top: 250px; /* Ajuste el margen superior */
+        }
+        .reels-icons a {
+            color: #ffffff; /* Color de los iconos */
+            margin-bottom: 15px; /* Espacio entre iconos */
+            font-size: 24px; /* Tamaño de los iconos */
+        }
+        .spacer {
+            flex-grow: 1; /* Permite que este elemento crezca para ocupar espacio */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <h1>Instagram</h1> <!-- Título de la barra lateral -->
+        <div>
+            <a href="#"><i class="material-icons">home</i>Inicio</a> <!-- Enlace a la sección Inicio -->
+            <a href="#"><i class="material-icons">search</i>Buscar</a> <!-- Enlace a la sección Buscar -->
+            <a href="#"><i class="material-icons">explore</i>Explorar</a> <!-- Enlace a la sección Explorar -->
+            <a href="#"><i class="material-icons">movie</i>Reels</a> <!-- Enlace a la sección Reels -->
+            <a href="#"><i class="material-icons">message</i>Mensajes</a> <!-- Enlace a la sección Mensajes -->
+            <a href="#"><i class="material-icons">notifications</i>Notificaciones</a> <!-- Enlace a la sección Notificaciones -->
+            <a href="#"><i class="material-icons">add_box</i>Crear</a> <!-- Enlace a la sección Crear -->
+            <a href="#"><i class="material-icons">account_circle</i>Perfil</a> <!-- Enlace a la sección Perfil -->
+        </div>
+        <div class="spacer"></div> <!-- Espacio flexible para empujar el siguiente enlace hacia abajo -->
+        <a href="#"><i class="material-icons">menu</i>Más</a> <!-- Ícono "Más" separado -->
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <div class="reels-container">
+            <img src="imagen1.png" alt="Imagen Principal"> <!-- Imagen principal -->
+            <!-- Iconos Reels justo al lado de la imagen -->
+            <div class="reels-icons">
+                <a href="#"><i class="material-icons">thumb_up</i></a> <!-- Icono de Me Gusta -->
+                <a href="#"><i class="material-icons">comment</i></a> <!-- Icono de Comentarios -->
+                <a href="#"><i class="material-icons">share</i></a> <!-- Icono de Compartir -->
+                <a href="#"><i class="material-icons">save</i></a> <!-- Icono de Guardar -->
+                <a href="#"><i class="material-icons">more_horiz</i></a> <!-- Icono de Tres Puntos -->
+            </div>
+        </div>
+        <!-- Botón "Saber más" debajo de la imagen -->
+        <a class="btn" href="http://localhost/RRHH/pagina/">Saber más</a> <!-- Enlace al que se redirige el botón -->
+    </div>
+
+    <!-- Importando Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

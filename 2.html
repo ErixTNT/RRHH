@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" /> <!-- Establece la codificación de caracteres a UTF-8 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" /> <!-- Preconexión para mejorar la carga de fuentes -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+    /> <!-- Importación de fuentes Noto Sans y Plus Jakarta Sans -->
+    <title>Opciones de Trabajo - Alas de Ayuda</title> <!-- Título de la página -->
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," /> <!-- Icono de la pestaña (favicon) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script> <!-- Importación de Tailwind CSS -->
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif; /* Establece la fuente del cuerpo de la página */
+      }
+      .bg-custom {
+        background-color: #00401a; /* Fondo personalizado */
+      }
+      .header-bg {
+        background-color: #003016; /* Fondo de la barra de navegación */
+      }
+      .text-gold {
+        color: #d6c65d; /* Color dorado para textos */
+      }
+      .text-light {
+        color: #e0e0e0; /* Color claro para textos secundarios */
+      }
+      .btn-gold {
+        background-color: #d6c65d; /* Color dorado del botón */
+        color: white; /* Color del texto del botón */
+        padding: 0.5rem 1rem; /* Espaciado vertical y horizontal */
+        border-radius: 0.375rem; /* Bordes redondeados para el botón */
+        box-shadow: 0 4px 15px rgba(214, 198, 93, 0); /* Efecto de sombra alrededor del botón */
+        transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves para cambios de fondo y transformaciones */
+      }
+      .btn-gold:hover {
+        background-color: #b8a14a; /* Color más oscuro al pasar el ratón sobre el botón */
+        transform: translateY(-2px); /* Eleva el botón al pasar el ratón */
+      }
+      /* Estilo para los enlaces del menú de navegación */
+      nav a {
+        transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves para el hover */
+      }
+      nav a:hover {
+        background-color: rgba(211, 198, 93, 0.2); /* Fondo gris brillante al pasar el mouse sobre el enlace */
+        border-radius: 0.375rem; /* Bordes redondeados para el botón */
+      }
+    </style>
+</head>
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-custom dark group/design-root overflow-x-hidden">
+      <header class="header-bg p-4"> <!-- Barra de navegación con fondo -->
+        <nav class="container mx-auto flex justify-between items-center"> <!-- Contenedor de navegación -->
+          <h1 class="text-gold text-2xl font-bold"> <!-- Título de la página -->
+            <a href="index.php" class="hover:text-gold">Alas de Ayuda</a> <!-- Enlace al inicio -->
+          </h1>
+          <ul class="flex space-x-6 text-light"> <!-- Lista de enlaces de navegación -->
+            <li><a href="https://docs.google.com/document/d/1t2JT2TTdc9H8ryFlHHTKtpJ0FUoo0lp57Hy3LIpw-Os/edit" class="hover:text-gold">Más sobre nosotros</a></li>
+            <li><a href="#" class="hover:text-gold">Servicios</a></li>
+            <li><a href="#" class="hover:text-gold">Contactar</a></li>
+            <li><a href="index.php" class="hover:text-gold">Únete</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="flex flex-1 justify-center items-center px-10"> <!-- Contenedor principal -->
+        <div class="max-w-[960px] text-center"> <!-- Contenedor de texto centrado -->
+          <img src="miimagen.png" alt="Descripción de la imagen" class="mx-auto my-4" style="width: 200px; height: auto;" />
+          <h2 class="text-gold text-3xl font-bold mb-4">Opciones de Trabajo</h2> <!-- Título de opciones de trabajo -->
+          <p class="text-light text-lg mb-6">Selecciona una de las siguientes oportunidades:</p> <!-- Instrucciones para el usuario -->
+          <ul class="space-y-4"> <!-- Lista de oportunidades de trabajo -->
+            <li>
+              <a href="2.html" class="block bg-[#D6C65D] text-black py-2 px-4 rounded hover:bg-[#D6C65D]/80">
+                Coordinador de Proyectos <!-- Enlace para Coordinador de Proyectos -->
+              </a>
+            </li>
+            <li>
+              <a href="2.html" class="block bg-[#D6C65D] text-black py-2 px-4 rounded hover:bg-[#D6C65D]/80">
+                Trabajador Social <!-- Enlace para Trabajador Social -->
+              </a>
+            </li>
+            <li>
+              <a href="3.html" class="block bg-[#D6C65D] text-black py-2 px-4 rounded hover:bg-[#D6C65D]/80">
+                Jefe de Marketing <!-- Enlace para Jefe de Marketing -->
+              </a>
+            </li>
+            <li>
+              <a href="2.html" class="block bg-[#D6C65D] text-black py-2 px-4 rounded hover:bg-[#D6C65D]/80">
+                Asistente de Programas <!-- Enlace para Asistente de Programas -->
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <footer class="flex justify-center"> <!-- Pie de página -->
+        <div class="flex max-w-[960px] flex-1 flex-col">
+          <p class="text-[#999999] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center">Alas de Ayuda</p> <!-- Texto de copyright -->
+        </div>
+      </footer>
+    </div>
+</body>
+</html>
